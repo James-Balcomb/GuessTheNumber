@@ -41,17 +41,14 @@ function randomNumber(userGuess, computersNumber) {
     to help manage the flow of your code.
 */
 let currentNumber = 1;
-let lowEnd;
-let highEnd;
+let highest = 100;
+let lowest = 0;
 
-/*  ### Ticket: `#U2_03`
-- **Given** that there is a variable to store a current value.
-- **Then** create a new function outside of all other functions as a **block body arrow function**, called `createGuess`.
-- **Then**, within the newly created function, reassign the `currentNumber` variable to house a random number.
-- **Then** return the reassigned variable. */
+createGuess = (highest, lowest) => {
 
-createGuess = () => {
-    currentNumber = Math.floor((Math.random() * 100) + 1);
+    console.log(highest,lowest);
+    currentNumber = Math.floor(Math.random() * (highest-lowest + 1) + lowest);
+    console.log("CreateGuess", currentNumber);
     return (currentNumber);
 };  
 
@@ -71,9 +68,11 @@ function compGuess(reply) {
     switch(reply) {
      
           case "higher": 
+             highest = currentNumber;
              return("Your number is higher? Is it " + currentNumber);
               
           case "lower":
+             lowest = currentNumber;
              return("Your Number is lower? Is it " + currentNumber);
 
           case "correct":
@@ -81,12 +80,8 @@ function compGuess(reply) {
     
     }
 
-    console.log(currentNumber);
-    console.log(lowEnd);
-    console.log(highEnd);
-
-
 }
 
-console.log(createGuess());
+//createGuess(highest, lowest);
+
 
