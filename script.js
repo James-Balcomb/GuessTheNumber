@@ -41,31 +41,47 @@ function randomNumber(userGuess, computersNumber) {
     to help manage the flow of your code.
 */
 
- /*   ### Ticket: `#U2_02`
-    - **Given** there is a need to store a value in the global scope of the `script.js` file.
-    - **Then** create a variable called `currentNumber`.
-    - **And** assign a value of 1 to the variable.
-    - **Given** that a value is stored in the `currentNumber` variable.
-    - **Then** return a string that states, "Is your number <`currentNumber`>?" within the `startCompGuess()` function. */
-let currentNumber;
+/*   ### Ticket: `#U2_02`
+   - **Given** there is a need to store a value in the global scope of the `script.js` file.
+   - **Then** create a variable called `currentNumber`.
+   - **And** assign a value of 1 to the variable.
+   - **Given** that a value is stored in the `currentNumber` variable.
+   - **Then** return a string that states, "Is your number <`currentNumber`>?" within the `startCompGuess()` function. */
+
+let currentNumber = 1;
+let lowEnd;
+let highEnd;
 
 function startCompGuess(num) {
     // This should return a string that denotes the first guessed number
     currentNumber = num;
-
     console.log(currentNumber);
-    return(currentNumber);
-
-
+    return ("Is your number " + currentNumber + "?");
 }
 
-function compGuess(reply, currentNumber) {
+function compGuess(reply) {
     /* 
-    *   The parameter "reply" will either be passing "lower", "correct", or "higher". This should be considered when evaluating th elogic and response.
-
+    The parameter "reply" will either be passing "lower", "correct", or "higher". This should be considered when evaluating th elogic and response.
     This should return a string indicating the computers response.
     */
-   console.log(currentNumber);
+
+
+    //if reply is higher then currentNumber is the lowEnd
+    //if the reply is lower then currentNumber is the highEnd
+
+    if (reply == "higher") {
+        lowEnd = currentNumber;
+    } else if (reply == "lower") {
+        highEnd = currentNumber;
+    } else if (reply == "correct") {
+        console.log("got it");
+    }
+
+    console.log(currentNumber);
+    console.log(lowEnd);
+    console.log(highEnd);
+
+    return('50');
 
 }
 
