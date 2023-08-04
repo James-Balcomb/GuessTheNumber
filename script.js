@@ -40,17 +40,20 @@ function randomNumber(userGuess, computersNumber) {
     You are not limited to just these functions. Feel free to create a new function that may be called 
     to help manage the flow of your code.
 */
-
-/*   ### Ticket: `#U2_02`
-   - **Given** there is a need to store a value in the global scope of the `script.js` file.
-   - **Then** create a variable called `currentNumber`.
-   - **And** assign a value of 1 to the variable.
-   - **Given** that a value is stored in the `currentNumber` variable.
-   - **Then** return a string that states, "Is your number <`currentNumber`>?" within the `startCompGuess()` function. */
-
 let currentNumber = 1;
 let lowEnd;
 let highEnd;
+
+/*  ### Ticket: `#U2_03`
+- **Given** that there is a variable to store a current value.
+- **Then** create a new function outside of all other functions as a **block body arrow function**, called `createGuess`.
+- **Then**, within the newly created function, reassign the `currentNumber` variable to house a random number.
+- **Then** return the reassigned variable. */
+
+createGuess = () => {
+    currentNumber = Math.floor((Math.random() * 100) + 1);
+    return (currentNumber);
+};
 
 function startCompGuess(num) {
     // This should return a string that denotes the first guessed number
@@ -65,10 +68,6 @@ function compGuess(reply) {
     This should return a string indicating the computers response.
     */
 
-
-    //if reply is higher then currentNumber is the lowEnd
-    //if the reply is lower then currentNumber is the highEnd
-
     if (reply == "higher") {
         lowEnd = currentNumber;
     } else if (reply == "lower") {
@@ -81,7 +80,8 @@ function compGuess(reply) {
     console.log(lowEnd);
     console.log(highEnd);
 
-    return('50');
 
 }
+
+console.log(createGuess());
 
