@@ -53,7 +53,7 @@ let highEnd;
 createGuess = () => {
     currentNumber = Math.floor((Math.random() * 100) + 1);
     return (currentNumber);
-};
+};  
 
 function startCompGuess(num) {
     // This should return a string that denotes the first guessed number
@@ -67,13 +67,18 @@ function compGuess(reply) {
     The parameter "reply" will either be passing "lower", "correct", or "higher". This should be considered when evaluating th elogic and response.
     This should return a string indicating the computers response.
     */
+ 
+    switch(reply) {
+     
+          case "higher": 
+             return("Your number is higher? Is it " + currentNumber);
+              
+          case "lower":
+             return("Your Number is lower? Is it " + currentNumber);
 
-    if (reply == "higher") {
-        lowEnd = currentNumber;
-    } else if (reply == "lower") {
-        highEnd = currentNumber;
-    } else if (reply == "correct") {
-        console.log("got it");
+          case "correct":
+             return("I Knew it was " + currentNumber);
+    
     }
 
     console.log(currentNumber);
