@@ -69,10 +69,12 @@ function compGuess(reply) {
      
           case "higher": 
              highest = currentNumber;
+             currentNumber = createGuess(highest, lowest);
              return("Your number is higher? Is it " + currentNumber);
               
           case "lower":
              lowest = currentNumber;
+             currentNumber = createGuess(highest, lowest);
              return("Your Number is lower? Is it " + currentNumber);
 
           case "correct":
@@ -84,4 +86,12 @@ function compGuess(reply) {
 
 //createGuess(highest, lowest);
 
-
+/*
+### Ticket: `#U2_06`
+Considering the `compGuess()` conditional
+- **Given** the `Lower` button is clicked.
+- **Then** a new guess should be invoked.
+- **And** the value should be reassigned to the appropriate variable.
+- **Given** the `Higher` button is clicked.
+- **Then** a new guess should be invoked.
+- **And** the value should be reassigned to the appropriate variable. */
